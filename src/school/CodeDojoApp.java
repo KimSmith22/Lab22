@@ -24,6 +24,19 @@ public class CodeDojoApp {
 		System.out.println("the way for an exciting career in technology.  Enter 1 to join a class or 2 to exit" );
 		register = k.nextInt();
 		
+		String message1 = "\n Hard Skills:\n"+
+				"Java:  " + students.size() + "\n" +
+				"JavaScript:  " + students.size() + "\n" +
+				"Web Development:  " + (students.size()) + "\n" +
+				"Software Testing:  " + students.size() + "\n";
+		System.out.println(message1);
+		
+		String message2 = "Soft Skills:\n"+
+				"Interviewing:  " + students.size() +"\n"+
+				"Networking:  " + students.size() + "\n";
+		System.out.println();
+		System.out.println(message2);
+		
 		System.out.println();
 		while(choice.equalsIgnoreCase("y")){
 		switch(register){// sets trigger word 'enroll' to skip to enrollment process of program
