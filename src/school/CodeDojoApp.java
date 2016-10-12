@@ -16,29 +16,36 @@ public class CodeDojoApp {
 		int register = 0;
 		String choice = "y";
 	
-		ArrayList <String> students = new ArrayList<String>();
-		
+		ArrayList <Student> javaStudents = new ArrayList<Student>();
+		ArrayList <Student> javaScriptStudents = new ArrayList<Student>();
+		ArrayList <Student> softwareTestingStudents = new ArrayList<Student>();
+		ArrayList <Student> networkingStudents = new ArrayList<Student>();
+		ArrayList <Student> interviewingStudents = new ArrayList<Student>();
+		ArrayList <Student> webDevelopmentStudents = new ArrayList<Student>();
+
+
 		Scanner k = new Scanner(System.in); //open Scanner k to accept input data
 		
 		System.out.println("Welcome to Grant Chirpus's Code Dojo!  We offer a variety of classes, designed to pave ");
 		System.out.println("the way for an exciting career in technology.  Enter 1 to join a class or 2 to exit" );
 		register = k.nextInt();
 		
+		while(choice.equalsIgnoreCase("y")){
 		String message1 = "\n Hard Skills:\n"+
-				"Java:  " + students.size() + "\n" +
-				"JavaScript:  " + students.size() + "\n" +
-				"Web Development:  " + (students.size()) + "\n" +
-				"Software Testing:  " + students.size() + "\n";
+				"Java:  " + javaStudents.size() + "\n" +
+				"JavaScript:  " + javaScriptStudents.size() + "\n" +
+				"Web Development:  " + (javaScriptStudents.size()) + "\n" +
+				"Software Testing:  " + javaScriptStudents.size() + "\n";
 		System.out.println(message1);
 		
 		String message2 = "Soft Skills:\n"+
-				"Interviewing:  " + students.size() +"\n"+
-				"Networking:  " + students.size() + "\n";
+				"Interviewing:  " + javaScriptStudents.size() +"\n"+
+				"Networking:  " + javaScriptStudents.size() + "\n";
 		System.out.println();
 		System.out.println(message2);
 		
 		System.out.println();
-		while(choice.equalsIgnoreCase("y")){
+	
 		switch(register){// sets trigger word 'enroll' to skip to enrollment process of program
 		case 1:
 			System.out.println("Enter the name of the class you would like to enroll in:  1 for Java, 2 for JavaScript, 3 for Software Testing,");
@@ -55,52 +62,22 @@ public class CodeDojoApp {
 		}//ends while loop for enrollment
 			switch(course){//course switch
 			case 1:
-				if(students.size() < 50){
-					System.out.println("You are now enrolled in Java");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(javaStudents, course);
 				break;
 			case 2:
-				if(students.size()< 50){
-					System.out.println("You are now enrolled in JavaScript");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(javaScriptStudents, course);
 				break;
 			case 3:
-				if(students.size()< 50){
-					System.out.println("You are now enrolled in Software Testing");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(softwareTestingStudents, course);
 				break;
 			case 4:
-				if(students.size()< 50){
-					System.out.println("You are now enrolled in Networking");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(networkingStudents, course);
 				break;
 			case 5:
-				if(students.size()< 50){
-					System.out.println("You are now enrolled in Interviewing");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(interviewingStudents, course);
 				break;
 			case  6:
-				if(students.size()< 50){
-					System.out.println("You are now enrolled in Web Development");
-				}else{
-					System.out.println("Sorry that course is full!  Choose another course or type 'exit' to exit the application: " );
-					course = k.nextInt();
-				}
+				Methods.testEnrollment(webDevelopmentStudents, course);
 				break;
 			}//end course switch		
 			k.nextLine();
